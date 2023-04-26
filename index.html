@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hayz tor</title>
+  <style>
+    body { background-color: gray; font-size: 1.25em; text-align: center; margin-top: 3em;}
+    nav { text-transform: uppercase; padding: 1em; padding-top: 1.5em;} 
+    ul { display: inline-block; padding: 1em; margin: 1em; background: black; border-radius: 10px;}
+    a { border-radius: 2px; color: white; text-decoration: none;}
+    .title { padding: 2em; background: black; color: white; border-radius: 20px; width: 75%; margin: auto;}
+    #btn { padding: 1em; border: none; border-radius: 2.5%; font-weight: bolder; width: 160px; background-color: lightgray;}
+    #btn:hover, ul:hover { transform: scale(1.1) rotate(-2.5deg);}
+  </style>
+</head>
+<body>
+  <div class = 'title'>
+    <p>welcome to amiri's tor site.</p>
+    <button id = 'btn' onclick="copy()">copy this site's link</button>
+  </div>
+  <nav><b>more from me:</b></nav>
+  <div style = "text-align: center;">
+    <li style = "list-style-type: none;">
+      <ul><a href="https://amirihayes.github.io/YearOfTheSenior/">my personal website</a></ul>
+      <ul><a href="https://amirihayes.github.io/CashFlowCoalitionInvesting/">my investment club</a></ul>
+      <ul><a href="https://github.com/AmiriHayes">see some more projects</a></ul>
+    </li>
+  </div>
+</body>
+<script>
+  console.log("hello there")
+  function copy(){
+    try {
+      navigator.clipboard.writeText("url link here")
+      changecolor('#E5F9E0')
+    } catch (error) {
+      alert('not available in this browser')
+      changecolor('#D31C41')
+    }
+  }
+  async function changecolor(color){
+    document.getElementById('btn').style.backgroundColor =`${color}`;
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    document.getElementById('btn').style.backgroundColor ='lightgray'
+  }
+</script>
+</html>
